@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider with Discover Button</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .slider {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slider-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      text-align: center;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .discover-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff6f61;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 18px;
+    }
+
+    .discover-btn:hover {
+      background-color: #ff3b2f;
+    }
+
+    .arrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .static-caption {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      font-weight: bold;
+      font-style: italic;
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      font-size: 40px;
+      color: white;
+      user-select: none;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider">
+    <div class="slider-container">
+      <div class="slide active">
+        <img src="rammandir.jpg" alt="Uttar Pradesh">
+        <div class="caption">Ayodhya</div>
+        <a href="https://www.incredibleindia.gov.in/en/uttar-pradesh/agra" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="agra.png" alt="Agra">
+        <div class="caption">Agra</div>
+        <a href="https://www.incredibleindia.gov.in/en/uttar-pradesh/agra" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="amritsar.png" alt="Amritsar">
+        <div class="caption">Amritsar</div>
+        <a href="https://www.incredibleindia.gov.in/en/punjab/amritsar" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="bangalore.png" alt="Bangalore">
+        <div class="caption">Bangalore</div>
+        <a href="https://www.incredibleindia.gov.in/en/karnataka/bengaluru" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="Darjeeling.png" alt="Darjeeling">
+        <div class="caption">Darjeeling</div>
+        <a href="https://www.incredibleindia.gov.in/en/west-bengal/darjeeling" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="goa.png" alt="Goa">
+        <div class="caption">Goa</div>
+        <a href="https://www.incredibleindia.gov.in/en/goa/goa" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="hampi.png" alt="Hampi">
+        <div class="caption">Hampi</div>
+        <a href="https://www.incredibleindia.gov.in/en/karnataka/hampi" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="hyderabad.png" alt="Hyderabad">
+        <div class="caption">Hyderabad</div>
+        <a href="https://www.incredibleindia.gov.in/en/telangana/hyderabad" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="kochi.png" alt="Kochi">
+        <div class="caption">Kochi</div>
+        <a href="https://www.incredibleindia.gov.in/en/kerala/kochi" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="ladakh.png" alt="Ladakh">
+        <div class="caption">Ladakh</div>
+        <a href="https://www.incredibleindia.gov.in/en/ladakh/leh" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="manali.png" alt="Manali">
+        <div class="caption">Manali</div>
+        <a href="https://www.incredibleindia.gov.in/en/himachal-pradesh/manali" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="mumbai.png" alt="Mumbai">
+        <div class="caption">Mumbai</div>
+        <a href="https://www.incredibleindia.gov.in/en/maharashtra/mumbai" class="discover-btn">Discover More</a>
+      </div>
+      <div class="slide">
+        <img src="Red fort.png" alt="Delhi">
+        <div class="caption">Delhi</div>
+        <a href="https://www.incredibleindia.gov.in/en/delhi/delhi" class="discover-btn">Discover More</a>
+      </div>
+    </div>
+
+    <div class="static-caption">Some Famous Destinations</div>
+
+    <div class="arrows">
+      <span class="prev" onclick="prevSlide()">&#10094;</span>
+      <span class="next" onclick="nextSlide()">&#10095;</span>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      if (index >= slides.length) {
+        currentIndex = 0;
+      } else if (index < 0) {
+        currentIndex = slides.length - 1;
+      } else {
+        currentIndex = index;
+      }
+      document.querySelector('.slider-container').style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    showSlide(currentIndex);
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowRight') {
+        nextSlide();
+      } else if (event.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+  </script>
+</body>
+</html>
